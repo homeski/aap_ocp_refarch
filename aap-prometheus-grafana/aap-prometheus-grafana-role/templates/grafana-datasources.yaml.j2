@@ -3,6 +3,7 @@ kind: GrafanaDatasource
 metadata:
   name: grafana-datasource
   namespace: {{ prometheus_namespace }}
+spec:
   datasource:
     access: proxy
     isDefault: true
@@ -18,4 +19,3 @@ metadata:
   plugins:
     - name: grafana-clock-panel
       version: 1.3.0
-  resyncPeriod: 5m
