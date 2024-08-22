@@ -9,7 +9,7 @@
 - include_tasks: 70-install-prometheus.yml
 - include_tasks: 80-expose-prometheus-operated-svc.yml
 - include_tasks: 90-install-grafana-operator.yml
-- include_tasks: 100-grafana-datasources.yml
-- include_tasks: 110-grafana-instance.yml
+- include_tasks: 100-grafana-instance.yml
+- include_tasks: 110-grafana-datasources.yml
 - include_tasks: 120-grafana-dashboard.yml
 - include_tasks: 130-print-routes-passwords.yml
