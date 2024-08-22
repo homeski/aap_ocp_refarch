@@ -8,7 +8,7 @@
   kubernetes.core.k8s_info:
     kind: Deployment
     namespace: "{{ prometheus_namespace }}"
-    name: grafana-operator-controller-manager
+    name: grafana-operator-controller-manager-v5
     wait: yes
     wait_condition:
       type: Available
