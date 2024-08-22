@@ -1,21 +1,21 @@
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDatasource
 metadata:
-  name: grafana-datasource
+  name: grafanadatasource-sample
   namespace: {{ prometheus_namespace }}
-spec:
-  instanceSelector:
-    matchLabels:
-      dashboards: grafana-cloud
-  allowCrossNamespaceImport: true
   datasource:
     access: proxy
-    editable: true
     isDefault: true
     jsonData:
       timeInterval: 5s
-    name: Prometheus
+      tlsSkipVerify: true
+    name: prometheus
     type: prometheus
     url: 'http://prometheus-operated:9090'
-    version: 1
-    name: grafana-datasources.yaml
+  instanceSelector:
+    matchLabels:
+      dashboards: grafana-a
+  plugins:
+    - name: grafana-clock-panel
+      version: 1.3.0
+  resyncPeriod: 5m

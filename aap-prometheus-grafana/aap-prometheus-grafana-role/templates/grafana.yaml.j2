@@ -1,24 +1,18 @@
 apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana
 metadata:
-  name: grafana
-  namespace: {{ prometheus_namespace }}
   labels:
-    dashboards: grafana-cloud
+    dashboards: grafana-a
+    folders: grafana-a
+  name: grafana-a
+  namespace: {{ prometheus_namespace }}
 spec:
-  ingress:
-    enabled: true
   config:
     auth:
-      disable_signout_menu: 'true'
-    auth.anonymous:
-      enabled: 'true'
+      disable_login_form: 'false'
     log:
-      level: warn
       mode: console
-  dashboardLabelSelector:
-    - matchExpressions:
-        - key: app
-          operator: In
-          values:
-            - grafana
+    security:
+      admin_password: start
+      admin_user: root
+  version: 10.4.3

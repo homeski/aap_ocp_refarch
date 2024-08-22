@@ -13,3 +13,8 @@
     wait_condition:
       type: Available
       status: True
+
+- name: Apply the Grafana route
+  kubernetes.core.k8s:
+    state: present
+    template: "grafana-route.yaml.j2"
